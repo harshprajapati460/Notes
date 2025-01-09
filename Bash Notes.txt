@@ -1,0 +1,31 @@
+Bash basics (cd, ls, pwd, mkdir, touch, vi)
+
+cd change directory
+ls to show all files
+pwd tell the location from parent of the file
+mkdir create a directory
+touch create a file 
+vi open the editor to edit the files
+
+Bash medium (grep, piping, reverse search)
+
+Piping very important used to run two commands at one syntax '|'
+
+Example cat stats | sort 
+
+will show all the files in ascending sorted order if reverse krna h to -r
+
+Grep 
+
+Use for cpmparing string in the txt file
+
+syntax grep keyword
+
+ex --> cat stats | grep -v a | sort -r
+
+will show all the stirng in txt in reverse order containing not a 
+funtion --> 
+-n sort numerically
+-f sort case insensitive sorting
+-r sort reverse
+

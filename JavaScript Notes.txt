@@ -1,0 +1,121 @@
+ How JavaScript Works?
+Everything in js happens inside an EXCECUTION CONTEXT
+
+IT is a big box with two component Memory(Variable environment) and code(Thread of Excecution)
+
+Memory --> store as Key value pairs
+key:value
+a : 10
+fn : {...}
+
+Code --> codes
+
+JavaScript is a Synchronous single threaded language
+
+Can excecute only one line and when one line is completed then it will go to next content
+
+
+2. What happens when you run a JavaScript code?
+
+When you hit run it will create a Excecution context (Global Scope)
+ 
+Where there are two phased First is memory phase and second is code excecution phase
+In memory phase all var and function are stored var are undefined and function body is stored as it is in the memory in key value pairs
+
+
+var n = 2;
+function square (num){
+   var ans = num * num;
+   return ans;
+}
+
+var square2 = square(num); --> function invocation
+var square3 = square(4);
+
+when the function is invoked it will crete another excecution context inside its parent excecution context and do the same 2 phase 
+
+Funtion excecution order is maintained by callstack 
+
+|
+|
+|
+| Excecution phase 1
+| Global excecution
+-----
+
+SINGLE THREADED NATURE OF JS
+
+JS is single threaded language, which means it executes code sequentially, one operation at a time, in a single call stack
+
+JS have blocking operation if one tasks take alot time to complete it will block the call stack, preventing other tasks from executing
+
+
+Multi-threading is a way through which concurrentl we can excecute multiple tasks python is multi threaded
+
+HOW JS EXECUTES CALLSTACK
+
+Basically first it will create a global execution context and push it to call stack call stack is basically it will execute immediately after puhsing it 
+
+Now Web api (Application programming interface)
+
+window
+setTimeout()
+DOM APIs
+fetch()
+Local Storage
+consle
+Location
+These api are given by browser event loops ke through execute hota h
+
+window.document.getelemtnbyId("");window --> document document is object of window
+
+
+Example 
+console.log("Start");
+
+setTimeout(function(cb)){
+   console.log("Callback");
+
+}, 5000);
+
+console.log("End);
+
+
+Now after executing last line gec pop off
+
+with the help of event loop and callback queue cb function (It will be present in web apis environment) will pe pushed in callstack and executed after 5 seconds
+
+Event loop just see continuously if there is any fun in queueu and push it to callstack and remove it from callstack queue
+
+
+if we click more than 1 time then queue is used
+
+
+fetch
+Goes and request an api
+Network calls
+ 
+New terms Microtask queue 
+Its priority is greater than callback queue 
+
+Event loop will execute microtask then callback 
+
+There is something called callback starvation
+
+When callback dont get chance to get execute
+
+The async keyword tells the JavaScript engine that a function is asynchronous. This allows the function to return a promise, which can be used with await expression.
+
+
+TO do 
+await 
+Creating promises , common promise api method
+Common js apis map,filter,reduce,object.keys
+
+
+
+
+
+
+
+
