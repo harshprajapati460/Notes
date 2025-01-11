@@ -113,7 +113,83 @@ Creating promises , common promise api method
 Common js apis map,filter,reduce,object.keys
 
 
+                PROMISES
 
+callback function --> Handling asyn func how many times it calls so we use promises
+
+A Promise is an object representing the eventual completion or failure of an asynchronous operation.
+Container for future values or 
+Execute only one time
+
+Data in promises when it is returned is immutable
+
+There are two staes of promise Status and data
+
+Ex code 
+const GITHUB_API = "link to api";
+
+const user = fetch(GITHUB_API);
+
+console.log(user);
+
+it will print primise pending and promise will be fullfilled right after because promise need some time to get resolved and get value
+
+
+Promises chaining in javascript
+if you stuck at callback hell
+
+const cart = ["shoes" , "pants", "kurta"];
+
+createOrder(cart, function (orderId){
+  proceedTopayment(orderId, function (paymentInfo){
+    showOrderSummary(paymentInfo, function(){
+       updateQalletBalance();
+      }
+}
+}
+alot complecated
+
+createOrder(cart)
+ .then(function (orderId){
+return  proceedTopayment((orderId){
+})
+.then(function showOrderSummary(paymentInfo){
+})
+.then(function updateQalletBalance(paymentInfo, ){
+})
+
+We have to return something as we are going vertically in 
+also u can use arrow function to make it more easy to readable
+
+createOrder(cart)
+ .then(function proceedTopayment((orderId){
+})
+.then(function showOrderSummary(paymentInfo){
+})
+.then(function updateQalletBalance(paymentInfo, ){
+})
+
+Inversion of control when we fetch somthing and give control to another internet dev how much async time it will take to come this is called inversion of control how many time it will call will execute when 
+this is solved by promises
+
+We should not pass the function in api we are attaching in with promise
+
+Question what is primise why they are important?
+
+
+What is await?
+The await keyword in JavaScript is used to pause the execution of an async function until a Promise is resolved or rejected. It makes asynchronous code look and behave more like synchronous code, making it easier to read and write.
+
+Common Promise api methods
+
+Pomise.resolve(value)
+
+Promise in simple words
+A promise is like a magic box.
+You don’t know what’s inside until you open it.
+.then() is for happy surprises 🎉.
+.catch() is for empty boxes 😢.
+await is like saying, “I’ll wait for the box to open before doing anything else.” ⏳
 
 
 
